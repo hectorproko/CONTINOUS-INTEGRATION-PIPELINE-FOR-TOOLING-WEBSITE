@@ -89,22 +89,21 @@ To add a webhook we go to  **Settings** > **Webhooks** > **Add webhook**
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/webhooks1.png)  
 
-On **Payload URL** we put the **public IP** (of Jenkins instance) and port **8080** followed by **/github-webhhook/**
+On **Payload URL** we put the **public IP** (of Jenkins instance) and port **8080** followed by **/github-webhhook/**  
+Make sure **Content type** is set to **application/json**
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/webhooks2.png)
 
-Now we can commit something to our repo to test the webhook
-Here Im creating a test file
+
+Here Im creating a **test** file in the repo to test the webhook
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/commit.png)  
 
-This triggers a 5th build
+This triggers build **#5**
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/build5.png)  
 
-
-
-If I look at the conosole output of the build 5 i can see that the job was trigger by Github push
+If I look at the **conosole output** or log of **build 5** I confirm that the job was triggered by **Github push**
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/log.png)  
 
