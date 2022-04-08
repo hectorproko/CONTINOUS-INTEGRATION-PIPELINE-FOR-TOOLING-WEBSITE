@@ -20,9 +20,8 @@ sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
 sudo apt update
 sudo apt-get install jenkins
 ```
-
-From your browser access http://<Jenkins-Server-Public-IP-Address-or-Public-DNS-Name>:8080
-You will be prompted to provide a default admin password
+We access jenkins through the browser using the instance IP.
+You will be prompted to provide a default **admin password**
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/unlock.png)
   
@@ -44,54 +43,48 @@ This may also be found at: /root/.jenkins/secrets/initialAdminPassword
 *************************************************************
 ```
 
-Then you will be asked which plugings to install – choose suggested plugins.  
+Then you will be asked which plugings to install – choose **suggested plugins**.  
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/suggested.png)  
 
-Once plugins installation is done – create an admin user and you will get your Jenkins server address.
-The installation is completed!
+Once plugins installation is done you are prompted to create an admin user and you will get your Jenkins server address and the installation is complete.
 
 
 
 ## Configure Jenkins to retrieve source codes from GitHub using Webhooks
-In this part, you will learn how to configure a simple Jenkins job/project (these two terms can be used interchangeably). This job will will be triggered by GitHub webhooks and will execute a ‘build’ task to retrieve codes from GitHub and store it locally on Jenkins server.
+In this part we'll configure a simple Jenkins job/project that will be triggered by GitHub webhooks and will execute a ‘build’ task to retrieve codes from GitHub and store it locally on Jenkins server.
 
-### 1. Create Jeknkins Job
-Go to Jenkins web console, click "New Item" and create a "Freestyle project"
-Pres ok at the bottom
+### 1. Create Jenkins Job
+Go to Jenkins web console, click **New Item** and create a **Freestyle project**  
+Press **OK** at the bottom
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/job.png)  
 
-It will prompt you for the configuration of the job
-Go to Source Code management tab pick Git put the URL of tooling repo
-https://github.com/hectorproko/tooling.git
-
+We get prompted to the job configuration. In the **Source Code management** tab we select **Git** and put the **URL** of **tooling** repo
+https://github.com/hectorproko/tooling.git  
+Click **Save**
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/sourcecode.png)  
-Click save
 
-Issue:
-When specifying repo, Jenkins uses master even though my local repo shows main, if I change to main I get error
+
+*Keep In Mind:  
+When specifying repo **branch**, Jenkins uses **master** even though my local repo shows **main**, if I change branch specifier to **main** I get error  
 ERROR: Couldn't find any revision to build. Verify the repository and branch configuration for this job.
-Finished: FAILURE
-From <http://18.204.202.156:8080/job/tooling_github/3/console> 
+Finished: FAILURE*
 
-It will take you to the Jobs Dashboard where you will "Build Now" to build 
-We test it  
+Once configuration is saved you are taken to the **Jobs Dashboard** where we can do test build by clicking on **Build Now**
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/buildnow.png)  
 
   
-Going to configure to trigger whenever there is a change in the sourcecode/Github's Repo
+Now we configure the job to trigger whenever there is a change in the **sourcecode** in Github's Repo
 
-Configure, "Build Triggers" Tab, check 
-GitHub hook trigger for GITScm polling
-
-Archive the artifacts for now all *
+In **Build Triggers** Tab check box **GitHub hook trigger for GITScm polling**  
+In **Post-build Actions** we archive all the artifacts with **\***
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/buildtriggers.png)  
-addin webhooks in github
 
+### Configuring webhook in github repo
 Go to the setting of the repo you wnat to add webhook Setttings > Webhooks > Add webhook
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/webhooks1.png)  
