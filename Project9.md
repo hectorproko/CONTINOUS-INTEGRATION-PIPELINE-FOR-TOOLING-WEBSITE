@@ -95,7 +95,7 @@ Make sure **Content type** is set to **application/json**
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/webhooks2.png)
 
 
-Here Im creating a **test** file in the repo to test the webhook
+Here I'm creating a **test** file in the repo to test the webhook
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/commit.png)  
 
