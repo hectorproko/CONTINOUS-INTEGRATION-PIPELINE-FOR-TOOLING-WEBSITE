@@ -85,7 +85,7 @@ In **Post-build Actions** we archive all the artifacts with **\***
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/buildtriggers.png)  
 
 ### Configuring webhook in github repo
-Go to the setting of the repo you wnat to add webhook Setttings > Webhooks > Add webhook
+To add a webhook we go to  **Settings** > **Webhooks** > **Add webhook**
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/webhooks1.png)  
 
