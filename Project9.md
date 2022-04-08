@@ -89,7 +89,7 @@ To add a webhook we go to  **Settings** > **Webhooks** > **Add webhook**
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/webhooks1.png)  
 
-On Payload URL, we put the public IP of our Jenkins instance followed by 8080 port and /github-webhhook/
+On **Payload URL** we put the **public IP** (of Jenkins instance) and port **8080** followed by **/github-webhhook/**
 
 ![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/webhooks2.png)
 
