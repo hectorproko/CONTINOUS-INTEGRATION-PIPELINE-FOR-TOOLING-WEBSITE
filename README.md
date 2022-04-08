@@ -9,4 +9,4 @@ In our project we are going to utilize Jenkins CI capabilities to make sure that
 **Project 9:** Enhance the architecture prepared in  [**Project 8:** LOAD-BALANCER-SOLUTION-WITH-APACHE](https://github.com/hectorproko/LOAD-BALANCER-SOLUTION-WITH-APACHE) by adding a Jenkins server, configure a job to automatically deploy source codes changes from Git to NFS server.
 
 ## Image: Architecture
-
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/architecture.png) 
