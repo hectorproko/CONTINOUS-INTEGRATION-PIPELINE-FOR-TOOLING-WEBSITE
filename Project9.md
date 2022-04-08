@@ -24,8 +24,8 @@ sudo apt-get install jenkins
 From your browser access http://<Jenkins-Server-Public-IP-Address-or-Public-DNS-Name>:8080
 You will be prompted to provide a default admin password
 
-## Image: Unlock
-
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/unlock.png)
+  
 We retrieve the password from the specified path
 ``` bash
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
@@ -44,8 +44,9 @@ This may also be found at: /root/.jenkins/secrets/initialAdminPassword
 *************************************************************
 ```
 
-Then you will be asked which plugings to install – choose suggested plugins.
-## Image: Suggested
+Then you will be asked which plugings to install – choose suggested plugins.  
+
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/suggested.png)  
 
 Once plugins installation is done – create an admin user and you will get your Jenkins server address.
 The installation is completed!
@@ -58,13 +59,15 @@ In this part, you will learn how to configure a simple Jenkins job/project (thes
 ### 1. Create Jeknkins Job
 Go to Jenkins web console, click "New Item" and create a "Freestyle project"
 Pres ok at the bottom
-## Image: Job
+
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/job.png)  
 
 It will prompt you for the configuration of the job
 Go to Source Code management tab pick Git put the URL of tooling repo
 https://github.com/hectorproko/tooling.git
-## Image: Source Code
 
+
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/sourcecode.png)  
 Click save
 
 Issue:
@@ -74,10 +77,11 @@ Finished: FAILURE
 From <http://18.204.202.156:8080/job/tooling_github/3/console> 
 
 It will take you to the Jobs Dashboard where you will "Build Now" to build 
-We test it
-## Image: Build Now
+We test it  
 
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/buildnow.png)  
 
+  
 Going to configure to trigger whenever there is a change in the sourcecode/Github's Repo
 
 Configure, "Build Triggers" Tab, check 
@@ -85,30 +89,30 @@ GitHub hook trigger for GITScm polling
 
 Archive the artifacts for now all *
 
-## Image: Buildtriggers
-
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/buildtriggers.png)  
 addin webhooks in github
 
 Go to the setting of the repo you wnat to add webhook Setttings > Webhooks > Add webhook
 
-## Image: Webhook1
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/webhooks1.png)  
 
 On Payload URL, we put the public IP of our Jenkins instance followed by 8080 port and /github-webhhook/
 
-
-## Image: Webhook2
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/webhooks2.png)
 
 Now we can commit something to our repo to test the webhook
 Here Im creating a test file
 
-## Image: commit
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/commit.png)  
 
 This triggers a 5th build
 
-## Image: Build5
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/build5.png)  
+
+
 
 If I look at the conosole output of the build 5 i can see that the job was trigger by Github push
 
-## Image: Conosoleoutput
+![Markdown Logo](https://raw.githubusercontent.com/hectorproko/CONTINOUS-INTEGRATION-PIPELINE-FOR-TOOLING-WEBSITE/main/images/log.png)  
 
 
